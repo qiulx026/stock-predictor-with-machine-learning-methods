@@ -211,7 +211,7 @@ if __name__ == '__main__':
   outfile = 'features-train.csv'  
   writer = csv.writer(open (outfile, 'wb'), delimiter=',')
   #writer.writerow(['mean', 'stddev', 'freqency', 'slop', 'delta', '5dayprice'])
-  for i in range(100):
+  for i in range(10):
     filename = filepathprefix % i
     print filename
     X, Y = process(filename)
@@ -224,12 +224,12 @@ if __name__ == '__main__':
   outfile = 'features-test1.csv'  
   writer = csv.writer(open (outfile, 'wb'), delimiter=',')
   filename = 'proj3-data/ML4T-129.csv'
-  print filename
+  print 'learning '+filename
   X, Y = process(filename)
   for i in range(len(Y)):
     l = [str(x) for x in list(X[i])]
     l.append(str(Y[i]))
     writer.writerow(l)
-  filetest("features-train.csv","features-test.csv","features-test1.csv")
+  filetest("features-train.csv","features-test.csv","features-test~.csv")
 
   
